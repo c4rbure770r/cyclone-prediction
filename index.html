@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Meteorological Department of India</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #005fa3;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+        }
+
+        .emblem-container img {
+            max-height: 50px;
+        }
+
+        nav {
+            background-color: #003c71;
+            padding: 12px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #0078d7;
+        }
+
+        main {
+            padding: 60px 40px 40px;
+            background-color: white;
+            margin-top: 90px;
+            margin-bottom: 80px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .content-container div {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 30%;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-container div:hover {
+            transform: scale(1.05);
+        }
+
+        .content-container iframe,
+        .content-container img {
+            width: 100%; /* Ensures they take up the full width of the container */
+            height: 300px;  /* Sets a consistent height for all elements */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .minister-image {
+            border-radius: 50%;
+            width: 150px;  /* Sets the same size for the minister image */
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #003c71;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-container div {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="150-year-logo.png" alt="150 Year Landmark Logo" class="landmark-logo">
+            </div>
+            <div class="department-info">
+                <h1>India Meteorological Department</h1>
+                <h2>Ministry of Earth Sciences</h2>
+                <h3>Government of India</h3>
+            </div>
+            <div class="emblem-container">
+                <img src="india-emblem.png" alt="Indian Emblem" class="india-emblem">
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="alerts.html">Recent Alerts</a>
+            <a href="temperatures.html">Current Temperatures</a>
+            <a href="cyclone.html">Cyclone Prediction</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to the India Meteorological Department</h2>
+        <section class="content-container">
+            <!-- Video Section -->
+            <div class="video-section">
+                <iframe 
+                    src="https://www.youtube.com/embed/iEcVPlg4Lmo" 
+                    title="India Meteorological Department Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p>Latest news updates</p>
+            </div>
+
+            <!-- Satellite Section -->
+            <div class="satellite-section">
+                <img src="https://mausam.imd.gov.in/Satellite/3Dasiasec_ir1.jpg" alt="Satellite Image" class="satellite-image">
+                <p>Latest Satellite Imagery</p>
+            </div>
+
+            <!-- Minister Section -->
+            <div class="minister-section">
+                <img src="climate-minister.jpg" alt="Climate Minister" class="minister-image">
+                <p>Shri Bhupender Yadav, Hon'ble Minister of Climate and Environment</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meteorological Department of India. All rights reserved.</p>
+    </footer>
+</body>
+</html>
