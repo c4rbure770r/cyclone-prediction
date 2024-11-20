@@ -1,2 +1,2 @@
 # cyclone-prediction
-cyclone predictioncyclone prediction
+cyclone prediction
