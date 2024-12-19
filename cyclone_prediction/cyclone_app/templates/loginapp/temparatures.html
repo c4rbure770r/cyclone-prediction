@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Temperatures - Meteorological Department of India</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #003c71;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+        }
+
+        .emblem-container img {
+            max-height: 50px;
+        }
+
+        .department-info {
+            text-align: center;
+        }
+
+        .department-info h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .department-info h2, .department-info h3 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        nav {
+            background-color: #005fa3;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #0078d7;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 100px 20px 40px;
+            background-color: white;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #005fa3;
+            font-size: 22px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+        }
+
+        th {
+            background-color: #005fa3;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #003c71;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            th, td {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 0 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="150-year-logo.png" alt="150 Year Landmark Logo">
+            </div>
+            <div class="department-info">
+                <h1>India Meteorological Department</h1>
+                <h2>Ministry of Earth Sciences</h2>
+                <h3>Government of India</h3>
+            </div>
+            <div class="emblem-container">
+                <img src="india-emblem.png" alt="Indian Emblem">
+            </div>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'recent_alerts' %}">Recent Alerts</a>
+            <a href="{% url 'temperatures' %}">Recent Temperatures</a>
+            <a href="{% url 'cyclone_prediction' %}">Cyclone Prediction</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Expected Temperature & Rainfall for Next 12 Months (All States)</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>Jan (Avg Temp, Avg Rainfall)</th>
+                        <th>Feb (Avg Temp, Avg Rainfall)</th>
+                        <th>Mar (Avg Temp, Avg Rainfall)</th>
+                        <th>Apr (Avg Temp, Avg Rainfall)</th>
+                        <th>May (Avg Temp, Avg Rainfall)</th>
+                        <th>Jun (Avg Temp, Avg Rainfall)</th>
+                        <th>Jul (Avg Temp, Avg Rainfall)</th>
+                        <th>Aug (Avg Temp, Avg Rainfall)</th>
+                        <th>Sep (Avg Temp, Avg Rainfall)</th>
+                        <th>Oct (Avg Temp, Avg Rainfall)</th>
+                        <th>Nov (Avg Temp, Avg Rainfall)</th>
+                        <th>Dec (Avg Temp, Avg Rainfall)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample row -->
+                    <tr>
+                        <td>Andhra Pradesh</td>
+                        <td>28°C, 15mm</td>
+                        <td>30°C, 10mm</td>
+                        <td>32°C, 5mm</td>
+                        <td>35°C, 20mm</td>
+                        <td>38°C, 40mm</td>
+                        <td>35°C, 100mm</td>
+                        <td>32°C, 200mm</td>
+                        <td>31°C, 250mm</td>
+                        <td>30°C, 150mm</td>
+                        <td>28°C, 50mm</td>
+                        <td>28°C, 20mm</td>
+                        <td>28°C, 10mm</td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 India Meteorological Department. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

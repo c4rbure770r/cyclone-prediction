@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("https://i.gifer.com/E3K8.gif") no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 47, 75, 0.9);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container img,
+        .emblem-container img {
+            max-height: 40px;
+        }
+
+        .department-info h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .department-info h2,
+        .department-info h3 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background: #0078d7;
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 100px 40px 40px;
+            margin-top: 90px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            max-width: 600px;
+            margin: 120px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form input,
+        form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #005fa3;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0078d7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 47, 75, 0.9);
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 60px 20px;
+                margin-top: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="150-year-logo.png" alt="150 Year Landmark Logo" class="landmark-logo">
+            </div>
+            <div class="department-info">
+                <h1>India Meteorological Department</h1>
+                <h2>Ministry of Earth Sciences</h2>
+                <h3>Government of India</h3>
+            </div>
+            <div class="emblem-container">
+                <img src="india-emblem.png" alt="Indian Emblem" class="india-emblem">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Register</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meteorological Department of India. All rights reserved.</p>
+    </footer>
+</body>
+</html>

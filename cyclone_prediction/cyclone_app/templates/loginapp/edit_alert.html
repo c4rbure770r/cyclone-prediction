@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Alert</title>
+</head>
+<body>
+    <h1>Edit Alert</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" value="{{ alert.region }}" required><br>
+
+        <label for="alert_type">Alert Type:</label>
+        <input type="text" id="alert_type" name="alert_type" value="{{ alert.alert_type }}" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{{ alert.description }}</textarea><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="{{ alert.date }}" required><br>
+
+        <button type="submit">Update Alert</button>
+    </form>
+</body>
+</html>

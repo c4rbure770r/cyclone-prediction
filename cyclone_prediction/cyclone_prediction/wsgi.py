@@ -1,5 +1,5 @@
 """
-WSGI config for met_dept project.
+WSGI config for cyclone_prediction project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'met_dept.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cyclone_prediction.settings')
 
 application = get_wsgi_application()
